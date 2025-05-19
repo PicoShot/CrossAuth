@@ -5,6 +5,30 @@ use tauri::{
 };
 use tauri_plugin_autostart::MacosLauncher;
 use tauri_plugin_opener::OpenerExt;
+use tauri_plugin_updater::UpdaterExt;
+
+async fn update(app: tauri::AppHandle) -> tauri_plugin_updater::Result<()> {
+    if let Some(update) = app.updater()?.check().await? {
+        let mut downloaded = 0;
+
+        update
+            .download_and_install(
+                |chunk_length, content_length| {
+                    downloaded += chunk_length;
+                    println!("downloaded {downloaded} from {content_length:?}");
+                },
+                || {
+                    println!("download finished");
+                },
+            )
+            .await?;
+
+        println!("update installed");
+        app.restart();
+    }
+
+    Ok(())
+}
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
@@ -46,7 +70,12 @@ pub fn run() {
                 .icon(app.default_window_icon().unwrap().clone())
                 .show_menu_on_left_click(true)
                 .on_menu_event(|app, event| match event.id.as_ref() {
-                    "update" => {}
+                    "update" => {
+                        let handle = app.app_handle().clone();
+                        tauri::async_runtime::spawn(async move {
+                            update(handle).await.unwrap();
+                        });
+                    }
                     "report" => {
                         let app = app.app_handle();
                         let url = "https://github.com/PicoShot/CrossAuth/issues";

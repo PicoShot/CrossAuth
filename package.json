@@ -2,7 +2,7 @@
   "name": "crossauth",
   "description": "A secure, cross-platform authenticator app",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "author": "PicoShot",
   "homepage": "https://picoshot.net",
