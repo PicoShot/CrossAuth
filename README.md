@@ -29,18 +29,30 @@
 
 ### Windows
 
-1. Download the latest `.exe` installer from the [Releases](https://github.com/PicoShot/CrossAuth/releases) page
-2. Run the installer and you good to go
+1. Download the latest `.exe` or `.msi` installer from the [Releases](https://github.com/PicoShot/CrossAuth/releases) page
+2. Run the installer and follow the on-screen instructions
+3. Launch CrossAuth from your Start menu
 
 ### macOS
 
-1. First you need to compile it yourself
+1. Download the latest `.dmg` file for your Mac (Intel or Apple Silicon) from the [Releases](https://github.com/PicoShot/CrossAuth/releases) page
 2. Open the DMG file and drag the app to your Applications folder
+3. You may need to right-click the app and select "Open" the first time to bypass Gatekeeper
 
 ### Linux
 
-1. First you need to compile it yourself
-2. Install using your system's package manager or run the AppImage
+1. Download the appropriate package for your distribution from the [Releases](https://github.com/PicoShot/CrossAuth/releases) page:
+   - `.AppImage`: Universal format that works on most distributions
+   - `.deb`: For Debian/Ubuntu-based distributions
+   - `.rpm`: For Red Hat/Fedora-based distributions
+2. Install using your preferred method:
+   - For AppImage: Make executable with `chmod +x CrossAuth*.AppImage` and run it
+   - For Debian/Ubuntu: `sudo dpkg -i CrossAuth*.deb`
+   - For Red Hat/Fedora: `sudo rpm -i CrossAuth*.rpm`
+
+### Building from source
+
+If you prefer to build from source, follow the steps in the [Development](#development) section.
 
 ## 🖼️ Screenshots
 
@@ -107,7 +119,6 @@ CrossAuth takes your security seriously:
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
-
 
 ## 📝 License
 
