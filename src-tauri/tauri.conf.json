@@ -46,6 +46,18 @@
       "icons/128x128@2x.png",
       "icons/icon.icns",
       "icons/icon.ico"
-    ]
+    ],
+    "createUpdaterArtifacts": true
+  },
+  "plugins": {
+    "updater": {
+      "windows": {
+        "installMode": "passive"
+      },
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEE2RkJFN0QwNEYyN0M2QUYKUldTdnhpZFAwT2Y3cHJGT3l5T2lHMitlVDdDUlJYb2hQSnNBK3lNakROVmg3d0tib2lJRkhubXYK",
+      "endpoints": [
+        "https://github.com/PicoShot/CrossAuth/releases/latest/download/latest.json"
+      ]
+    }
   }
 }
