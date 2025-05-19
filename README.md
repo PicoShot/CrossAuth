@@ -45,8 +45,8 @@
 ## 🖼️ Screenshots
 
 <div align="center">
-  <img src="resources/accounts.png" width="400" alt="Main Screen">
-  <img src="resources/add-account.png" width="400" alt="Add Account">
+  <img src="public/accounts.png" width="400" alt="Main Screen">
+  <img src="public/add-account.png" width="400" alt="Add Account">
 </div>
 
 ## 🚀 Getting Started
